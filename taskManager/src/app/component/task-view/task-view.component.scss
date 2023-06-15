@@ -1,0 +1,221 @@
+@import "../../../main-style.scss";
+
+.task-manager-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  max-height: 680px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+
+  width: 250px;
+  background: white;
+
+  margin-right: 10px;
+  padding: 42px;
+
+  border-radius: 10px;
+  border: 2px solid black; /* Dodana czarna obramówka */
+}
+
+.buttonList {
+  font-family: "Lobster";
+  font-size: 15px;
+  margin-top: auto;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: orange;
+  width: 100%;
+  color: white;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black; /* Dodana czarna obramówka */
+}
+.buttonLogin {
+  margin-left: 10px; /* Dodaj odstęp między tekstem a przyciskiem */
+  background-color: #0066ff; /* Ustaw kolor tła na niebieski */
+  color: white; /* Ustaw kolor tekstu na biały */
+  padding: 5px 10px; /* Dodaj wypełnienie wokół tekstu */
+  border: none; /* Usuń obramowanie */
+  border-radius: 4px; /* Zaokrąglony rog */
+  text-decoration: none; /* Usuń podkreślenie */
+}
+.title1 {
+  font-family: "Lobster";
+  font-size: 30px;
+}
+.title2 {
+  font-family: "Lobster";
+  font-size: 30px;
+}
+
+.task-list-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 42px;
+  background-color: lightgray;
+  border-radius: 8px;
+  border: 2px solid black; /* Dodana czarna obramówka */
+}
+
+.top-bar {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.title {
+  flex-grow: 1;
+  margin: 0;
+  font-size: 20px;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.table-header {
+  font-weight: bold;
+  text-align: center;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.table-cell {
+  text-align: center;
+}
+
+.list-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 5px;
+  width: 100%;
+  color: #5f5f5f;
+  margin-bottom: 5px;
+  border: 2px solid black; /* Dodana czarna obramówka */
+
+  &:hover {
+    background: $light;
+  }
+
+  &.is-active {
+    background-color: orange;
+    color: $dark-green;
+  }
+}
+
+.task {
+  display: flex;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  align-items: center;
+  font-family: "Sigmar", cursive;
+  border: 2px solid black; /* Dodana czarna obramówka */
+
+  .task-text {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .task-buttons {
+    transition: opacity 0.2s, transform 0.2s;
+    opacity: 0;
+    transform: scale(0.85);
+  }
+}
+
+.circle-add-button {
+  position: absolute;
+  bottom: 35px;
+  right: 35px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.empty-state-text {
+  font-size: 20px;
+  color: #777;
+  text-align: center;
+}
+.buttonTask {
+  font-family: "Lobster";
+  font-size: 15px;
+  margin-top: auto;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: orange;
+  width: 100%;
+  color: white;
+  margin-bottom: 5px;
+  border: 2px solid black; /* Dodana czarna obramówka */
+
+  &:hover {
+    background: rgba(255, 102, 0, 0.8);
+  }
+
+  &.is-active {
+    background-color: orange;
+  }
+}
+
+.button {
+  margin-bottom: 10px;
+}
+
+.button.is-primary-one {
+  margin-right: 10px;
+  background-color: rgb(252, 12, 12);
+  padding: 10px 15px;
+  border-radius: 5px;
+  width: 100%;
+  color: white;
+  border: 2px solid black; /* Dodana czarna obramówka */
+}
+.task {
+  display: flex;
+  align-items: center;
+}
+
+.task p {
+  margin-right: 600px;
+}
+
+.edit-button {
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 2px solid black; /* Dodana czarna obramówka */
+}
+
+.edit-button:hover {
+  background-color: #0c7cd5;
+}

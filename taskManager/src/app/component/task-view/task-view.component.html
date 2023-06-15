@@ -1,0 +1,36 @@
+<div class="centered-content">
+  <div class="task-manager-container">
+    <div *ngIf="!serviceAuth.isLoggedIn()">
+      <a class="has-text-white">Zaloguj sie by przejść do zadań</a>
+      <a class="buttonLogin" [routerLink]="['/login']">Zaloguj się</a>
+    </div>
+    <div class="sidebar has-background-white" *ngIf="serviceAuth.isLoggedIn()">
+      <h1 class="title1">Lists</h1>
+      <div class="list-menu">
+        <div
+          class="list-menu-item"
+          [ngClass]="{ 'is-active': link.id === currentActiveList }"
+          *ngFor="let link of list"
+          (click)="updateCarrentListId(link.id)"
+        >
+          <div>{{ link.title }}</div>
+        </div>
+      </div>
+      <a class="buttonList" [routerLink]="['/list']">+ add list</a>
+      <button class="button is-primary-one" (click)="deleteList()">
+        delete list
+      </button>
+    </div>
+    <div class="task-list-container" *ngIf="serviceAuth.isLoggedIn()">
+      <h1 class="title2">Tasks</h1>
+      <div class="task" appDyrektywa *ngFor="let link of tasks">
+        <p>{{ link.title | upperCase }}</p>
+        <a class="edit-button" [routerLink]="['/edit', link.id]">edit</a>
+      </div>
+
+      <a class="buttonTask" [routerLink]="['/task', currentActiveList]"
+        >+ add task</a
+      >
+    </div>
+  </div>
+</div>
